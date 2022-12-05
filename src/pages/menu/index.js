@@ -27,11 +27,8 @@ function KakaoMapScript(lat = 33.450701, lng = 126.570667, location, navigate) {
   let truck;
   for (var i = 0; i < truckDB.length; i++) {
     truck = truckDB[i];
-    if (
-      location.state.category &&
-      !truck.on &&
-      truck.categories !== location.state.category
-    )
+    if (!truck.on) continue;
+    if (location.state.category && truck.categories !== location.state.category)
       continue;
     // 마커 이미지를 생성합니다
     var truck_image = new kakao.maps.MarkerImage(
