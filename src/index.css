@@ -1,7 +1,6 @@
 :root {
-  --main-color : #3396fe;
-  --highlight-color : #009EFF ;
-
+  --main-color: #3396fe;
+  --highlight-color: #009eff;
 }
 * {
   box-sizing: border-box;
@@ -9,5 +8,3 @@
 body {
   margin: 0;
 }
-
-
