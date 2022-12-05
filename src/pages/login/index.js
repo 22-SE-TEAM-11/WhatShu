@@ -6,7 +6,13 @@ const LoginPage = () => {
   return (
     <div id="container-Login">
       <div id="form-Login">
-        <span>와쓔</span>
+        <img 
+        src={require('../../assets/logo.png')}
+        style={{
+            width:'250px',
+
+        }}
+         />
         <div>
           <span>아이디</span>
           <input />
