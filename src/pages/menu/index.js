@@ -27,7 +27,6 @@ function KakaoMapScript(lat = 33.450701, lng = 126.570667, location, navigate) {
   let truck;
   for (var i = 0; i < truckDB.length; i++) {
     truck = truckDB[i];
-    console.log(truck.id, location.state.category && !truck.on);
     if (!truck.on) continue;
     if (location.state.category && truck.categories !== location.state.category)
       continue;
