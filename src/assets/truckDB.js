@@ -6,6 +6,7 @@ export const truckDB = [
     name: "takoyaki",
     menu: ["takoyaki", "octopus"],
     categories: "snack",
+    on: 1,
   },
   {
     id: 2,
@@ -14,6 +15,7 @@ export const truckDB = [
     name: "burger",
     menu: ["burger", "cola"],
     categories: "fastfood",
+    on: 1,
   },
   {
     id: 3,
@@ -22,6 +24,7 @@ export const truckDB = [
     name: "fruit",
     menu: ["apple", "귤"],
     categories: "fruit",
+    on: 1,
   },
   {
     id: 4,
@@ -30,5 +33,6 @@ export const truckDB = [
     name: "수육",
     menu: ["수육", "순대"],
     categories: "jokbo",
+    on: 1,
   },
 ];

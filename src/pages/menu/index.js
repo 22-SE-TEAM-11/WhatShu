@@ -4,7 +4,7 @@ import { truckDB } from "../../assets/truckDB";
 
 const { kakao } = window;
 
-function KakaoMapScript(lat = 33.450701, lng = 126.570667) {
+function KakaoMapScript(lat = 33.450701, lng = 126.570667, location) {
   const container = document.getElementById("map");
   const options = {
     center: new kakao.maps.LatLng(lat, lng),
@@ -27,6 +27,7 @@ function KakaoMapScript(lat = 33.450701, lng = 126.570667) {
   let truck;
   for (var i = 0; i < truckDB.length; i++) {
     truck = truckDB[i];
+    if (!truck.on && truck.categories !== location.state.category) continue;
     // 마커 이미지를 생성합니다
     var truck_image = new kakao.maps.MarkerImage(
       "https://cdn-icons-png.flaticon.com/512/1046/1046762.png",
@@ -52,7 +53,11 @@ const MenuPage = () => {
   if ("geolocation" in navigator)
     navigator.geolocation.getCurrentPosition((position) => {
       console.log(position);
-      KakaoMapScript(position.coords.latitude, position.coords.longitude);
+      KakaoMapScript(
+        position.coords.latitude,
+        position.coords.longitude,
+        location
+      );
     });
 
   return (
