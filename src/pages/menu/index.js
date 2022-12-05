@@ -48,7 +48,6 @@ function KakaoMapScript(lat = 33.450701, lng = 126.570667, location, navigate) {
     });
     truck_marker.setMap(map);
     kakao.maps.event.addListener(truck_marker, "click", () => {
-      console.log(navigate);
       navigate("/detail", { state: { id: truck.id } });
     });
   }

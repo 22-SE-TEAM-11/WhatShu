@@ -10,14 +10,15 @@ const MenuDetailPage = () => {
   console.log(location);
   for (let i = 0; i < truckDB.length; i++) {
     truck = truckDB[i];
-    const truckId = "/menu/" + truck.id;
+    const truckId = location.state.id;
     console.log("truckId: ", truckId);
     console.log("location: ", location);
-    if (truckId === location.pathname) {
+    if (truckId === truck.id) {
       storeName = truck.name;
       storeMenu = truck.menu;
       console.log("storeName: ", storeName);
       console.log("storeMenu: ", storeMenu);
+      break;
     }
   }
   return (
