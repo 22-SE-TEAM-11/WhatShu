@@ -35,7 +35,9 @@ const MenuPage = () => {
 
   return (
     <>
+      {/** 선택한 음식 카테고리 */}
       <div>{location.state.category}</div>
+      {/** 지도 */}
       <div id="map" style={{ width: "100vh", height: "100vh" }}></div>;
     </>
   );
