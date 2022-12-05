@@ -1,6 +1,25 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
+import { truckDB } from "../../../assets/truckDB";
 
 const MenuDetailPage = () => {
+  const location = useLocation();
+  let storeName;
+  let storeMenu;
+  let truck;
+  console.log(location);
+  for (let i = 0; i < truckDB.length; i++) {
+    truck = truckDB[i];
+    const truckId = "/menu/" + truck.id;
+    console.log("truckId: ", truckId);
+    console.log("location: ", location);
+    if (truckId === location.pathname) {
+      storeName = truck.name;
+      storeMenu = truck.menu;
+      console.log("storeName: ", storeName);
+      console.log("storeMenu: ", storeMenu);
+    }
+  }
   return (
     <>
       <div>
@@ -15,7 +34,7 @@ const MenuDetailPage = () => {
             alignItems: "center",
           }}
         >
-          <h2>타코야키 집</h2>
+          <h2>{storeName}</h2>
         </div>
         <div
           id="store_info"
@@ -25,8 +44,15 @@ const MenuDetailPage = () => {
             alignItems: "center",
           }}
         >
-          <span>타코야키</span>
-          <span> 25알: 7,000원</span>
+          <span>
+            {storeMenu.map((m) => {
+              return (
+                <div>
+                  {m.key} : {m.price}\
+                </div>
+              );
+            })}
+          </span>
         </div>
       </div>
     </>
