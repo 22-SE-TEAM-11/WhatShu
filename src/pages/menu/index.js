@@ -1,8 +1,11 @@
 import React from 'react'
+import { useLocation } from 'react-router-dom'
 
 const MenuPage = () => {
+    const location = useLocation();
+    console.log(location);
   return (
-    <div>MenuPage</div>
+    <div>{location.state.category}</div>
   )
 }
 

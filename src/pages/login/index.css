@@ -1,0 +1,43 @@
+#container-Login {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#form-Login{
+    width: 400px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+#form-Login > div {
+    width: 300px;
+    display:flex;
+    flex-direction: column;
+}
+#form-Login >div >input {
+    padding:10px 5px;
+    border-radius: 10px;
+    border: 2px solid var(--main-color);
+    color:var(--main-color);
+}
+#form-Login>div>span {
+    font-size: 16px;
+    color:var(--main-color);
+}
+#form-Login >div >input:focus {
+    outline: 1px solid var(--main-color);
+}
+#form-Login>a>button {
+    margin-top :5px;
+    width: 100px;
+    height: 50px;
+    padding: 5px;
+    color: var(--main-color);
+    background-color: white;
+    border: 2px solid var(--main-color);
+    border-radius: 5px;
+    cursor:pointer;
+
+}
