@@ -8,9 +8,9 @@ import MenuDetailPage from '../pages/menu/detail'
 
 const Router = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
     <Routes>
-        <Route path="/" element={<LoginPage />} />
+        <Route path="/" element={<MainPage />} />
         <Route path="/main" element={<MainPage />} />
         <Route path="/menu" element={<MenuPage />}/>
         <Route path="/menu/:menuId" element={<MenuDetailPage/>}/>

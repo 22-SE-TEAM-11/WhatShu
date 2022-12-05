@@ -1,4 +1,5 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 
 const { kakao } = window;
 
@@ -26,12 +27,18 @@ function KakaoMapScript(lat = 33.450701, lng = 126.570667) {
 }
 
 const MenuPage = () => {
+  const location = useLocation();
   if ("geolocation" in navigator)
     navigator.geolocation.getCurrentPosition((position) => {
       KakaoMapScript(position.coords.latitude, position.coords.longitude);
     });
 
-  return <div id="map" style={{ width: "100vh", height: "100vh" }}></div>;
+  return (
+    <>
+      <div>{location.state.category}</div>
+      <div id="map" style={{ width: "100vh", height: "100vh" }}></div>;
+    </>
+  );
 };
 
 export default MenuPage;
