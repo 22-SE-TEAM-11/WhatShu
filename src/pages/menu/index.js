@@ -1,10 +1,10 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { truckDB } from "../../assets/truckDB";
 
 const { kakao } = window;
 
-function KakaoMapScript(lat = 33.450701, lng = 126.570667, location) {
+function KakaoMapScript(lat = 33.450701, lng = 126.570667, location, navigate) {
   const container = document.getElementById("map");
   const options = {
     center: new kakao.maps.LatLng(lat, lng),
@@ -38,10 +38,14 @@ function KakaoMapScript(lat = 33.450701, lng = 126.570667, location) {
     var truck_marker = new kakao.maps.Marker({
       map: map, // 마커를 표시할 지도
       position: new kakao.maps.LatLng(truck.latitudee, truck.longitude), // 마커를 표시할 위치
-      title: truckDB[i].name, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
+      title: truck.name, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
       image: truck_image, // 마커 이미지
     });
     truck_marker.setMap(map);
+    kakao.maps.event.addListener(truck_marker, "click", () => {
+      console.log(navigate);
+      navigate("/detail", { state: { id: truck.id } });
+    });
   }
 
   // 마커가 지도 위에 표시되도록 설정합니다
@@ -49,6 +53,7 @@ function KakaoMapScript(lat = 33.450701, lng = 126.570667, location) {
 }
 
 const MenuPage = () => {
+  const navigate = useNavigate();
   const location = useLocation();
   if ("geolocation" in navigator)
     navigator.geolocation.getCurrentPosition((position) => {
@@ -56,7 +61,8 @@ const MenuPage = () => {
       KakaoMapScript(
         position.coords.latitude,
         position.coords.longitude,
-        location
+        location,
+        navigate
       );
     });
 
