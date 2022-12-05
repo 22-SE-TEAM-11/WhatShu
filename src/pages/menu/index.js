@@ -1,9 +1,21 @@
-import React from 'react'
+import React, { useEffect } from "react";
 
-const MenuPage = () => {
-  return (
-    <div>MenuPage</div>
-  )
+const { kakao } = window;
+
+function KakaoMapScript() {
+  const container = document.getElementById("map");
+  const options = {
+    center: new kakao.maps.LatLng(33.450701, 126.570667),
+    level: 3,
+  };
+  const map = new kakao.maps.Map(container, options);
 }
 
-export default MenuPage
+const MenuPage = () => {
+  useEffect(() => {
+    KakaoMapScript();
+  }, []);
+  return <div id="map" style={{ width: "100vh", height: "100vh" }}></div>;
+};
+
+export default MenuPage;
