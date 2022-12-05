@@ -1,0 +1,14 @@
+button {
+    height: 80px;
+    width: 100px;
+    border-bottom-left-radius: 5px;
+    padding: 5px;
+    margin: auto;
+    display: block;
+    flex-wrap: wrap;
+    
+  }
+  
+  #search, #map {
+    width: 310px;
+  }
