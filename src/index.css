@@ -1,6 +1,10 @@
 :root {
   --main-color : skyblue;
-  
+  --highlight-color : #009EFF ;
+
+}
+* {
+  box-sizing: border-box;
 }
 body {
   margin: 0;

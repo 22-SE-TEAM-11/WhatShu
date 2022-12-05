@@ -1,46 +1,22 @@
 import React from "react";
-import index from "./index.css";
+import "./index.css";
 
 const MainPage = () => {
   return (
     <>
-      <div>
-        <table id="category" width={"100%"}>
-          <tbody>
-            <tr>
-              <td>
-                <button id="bunsick">분식</button>
-              </td>
-              <td>
-                <button id="fastfood">패스트 푸드</button>
-              </td>
-              <td>
-                <button id="japan">일식</button>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <button id="hei">회</button>
-              </td>
-              <td>
-                <button id="fruit">과일</button>
-              </td>
-              <td>
-                <button id="meat">족발&보쌈</button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        <table id="etc" width={"100%"}>
-          <tbody>
-            <tr>
-              <button id="search">검색</button>
-            </tr>
-            <tr>
-              <button id="map">지도</button>
-            </tr>
-          </tbody>
-        </table>
+      <div id="container-Main">
+        <div id="category">
+            <button>분식</button>
+            <button>패스트 푸드</button>
+            <button>일식</button>
+            <button>중식</button>
+            <button>과일</button>
+            <button>족발 & 보쌈</button>
+        </div>
+        <div id="main-bottom">
+            <button>검색</button>
+            <button>지도</button>
+        </div>
       </div>
     </>
   );
