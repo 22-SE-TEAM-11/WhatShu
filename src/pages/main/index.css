@@ -26,6 +26,12 @@
 #main-bottom {
  margin: 0 5px;
 }
-#main-bottom > button {
+#main-bottom button {
   margin-bottom: 5px;
+}
+
+#main-bottom > a:last-child >button {
+  border:1px solid black;
+  color:black;
+
 }

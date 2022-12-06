@@ -29,7 +29,7 @@
 #form-Login >div >input:focus {
     outline: 1px solid var(--main-color);
 }
-#form-Login>a>button {
+#form-Login>button {
     margin-top :5px;
     width: 100px;
     height: 50px;

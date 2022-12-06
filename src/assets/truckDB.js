@@ -24,7 +24,7 @@ export const truckDB = [
     name: "fruit",
     menu: ["apple", "귤"],
     categories: "fruit",
-    on: 1,
+    on: 0,
   },
   {
     id: 4,
