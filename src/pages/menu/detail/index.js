@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useLocation } from "react-router-dom";
-import { truckDB } from "../../../assets/truckDB";
+import { MyContext } from "../../../App";
 
 const MenuDetailPage = () => {
   const location = useLocation();
+  const {trucks:truckDB} = useContext(MyContext);
   let storeName;
   let storeMenu;
   let truck;
