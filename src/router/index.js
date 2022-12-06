@@ -10,11 +10,11 @@ import TruckPage from '../pages/trucks'
 const Router = () => {
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>
-    <Routes>
+      <Routes>
         <Route path="/" element={<LoginPage />} />
         <Route path="/main" element={<MainPage />} />
         <Route path="/menu" element={<MenuPage />}/>
-        <Route path="/menu/:menuId" element={<MenuDetailPage/>}/>
+        <Route path="/detail" element={<MenuDetailPage/>}/>
         <Route path="/trucks" element={<TruckPage/>}/>
     </Routes>
   </BrowserRouter>
@@ -22,4 +22,4 @@ const Router = () => {
   )
 }
 
-export default Router
+export default Router;

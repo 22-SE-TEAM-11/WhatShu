@@ -5,7 +5,7 @@ import "./index.css";
 
 const MainPage = () => {
   const { state: user } = useLocation();
-  const {trucks} = useContext(MyContext);
+  const { trucks } = useContext(MyContext);
   console.log(user);
   console.log(trucks);
   return (
@@ -66,18 +66,27 @@ const MainPage = () => {
             <Link
               to="/trucks"
               state={{
-               ...user
+                ...user,
               }}
             >
               <button>트럭 관리</button>
             </Link>
           )}
-          <button>지도</button>
+          <Link
+            to="/menu"
+            state={{
+              category: "all",
+            }}
+          >
+            <button>지도</button>
+          </Link>
           <Link to="/">
-          <button 
-          id="logout-btn"
-          onClick={()=>alert("로그아웃 되었습니다.")}
-          >Log out</button>
+            <button
+              id="logout-btn"
+              onClick={() => alert("로그아웃 되었습니다.")}
+            >
+              Log out
+            </button>
           </Link>
         </div>
       </div>
